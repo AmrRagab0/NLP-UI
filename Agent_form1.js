@@ -1,4 +1,4 @@
-let products = ['chair', 'table', 'car', 'fan'];
+let products = ['chair', 'table', 'car', 'fan','game','window','cable','tire','clock'];
 let list = document.getElementById("products_list");
 
 let queryString = new URLSearchParams(window.location.search);
