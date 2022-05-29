@@ -10,11 +10,11 @@ function onSubmit(e)
 
     if(Username_input.value === 'user' && Password_input.value === 'user')
     {
-        console.log(Username_input.value);
-        window.open("http://localhost:63342/Test/User_form.html?_ijt=19frnpllhq1gv67dfrsrt7iv83&_ij_reload=RELOAD_ON_SAVE","_self")
+        var para = new URLSearchParams();
+        para.append("user_name", Username_input.value)
+        window.open("http://localhost:63342/Test/User_search_form.html?" + para.toString(), "_self")
     } else if(Username_input.value === '' && Password_input.value === '')
     {
         console.log(Username_input.value);
     }
 }
-
