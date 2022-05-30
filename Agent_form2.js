@@ -7,6 +7,7 @@ var product_name = queryString.get("Product");
 
 let text1 = "Product  (" + product_name + ")  Tickets Summarization:"
 document.getElementById("header").innerHTML=(text1);
+document.getElementById("header").style.display = 'block';
 
 let tick_num = 2;
 let text = "There are a total number of (" + tick_num.toString() + ") tickets to review:"
@@ -18,46 +19,64 @@ let replies_obj = [];
 let reviews = document.getElementById("tickets");
 
 for (let i=0; i<reviews_obj.length;i++) {
-    let li = document.createElement("li");  // create list element
+    let container = document.createElement("div");
+    container.setAttribute('id','container');
+
+    let review_area = document.createElement("div");  // to contain the review part
+    review_area.setAttribute('class','review_details');
 
     let username = document.createElement("label");  // for viewing username
     username.innerHTML= reviews_obj[i].user;
-    reviews.appendChild(username);
+    review_area.appendChild(username);
     username.style.display = 'block';
 
+
+
+    let rate_span = document.createElement("span");
+    rate_span.setAttribute('class','star');
     for (let j = 1; j <= 5; j++){                               // for the rating
-        let rating = document.createElement("input");
-        rating.setAttribute('type','radio');
+
+        let rating = document.createElement("i");
         if (reviews_obj[i].rate >= j)
         {
+            rating.setAttribute('class','fa fa-star checked');
             rating.checked = true;
         }
         else {
+            rating.setAttribute('class','fa fa-star-o');
             rating.checked = false;
-            rating.disabled = true;
         }
-
-        reviews.appendChild(rating);
+        rate_span.appendChild(rating);
+        review_area.appendChild(rate_span);
     }
 
-    let ticket = document.createElement("textarea") // for the review summarization
+    let ticket = document.createElement("p") // for the review summarization
     ticket.disabled = true;
-    ticket.innerHTML= reviews_obj[i].sum;
+    ticket.innerHTML= "'" + reviews_obj[i].sum + "'";
+    ticket.setAttribute('class','info');
     ticket.style.display = 'block';
-    reviews.appendChild(ticket);
+    review_area.appendChild(ticket);
+
+    container.appendChild(review_area);
+
+    let reply_area = document.createElement("div");  // to contain the reply part
+    reply_area.setAttribute('class','reply_details');
 
     let reply = document.createElement("textarea");  // for the reply
     reply.setAttribute('id',"reply" + reviews_obj[i].id);
     reply.placeholder = reply.getAttribute('id');
-    reviews.appendChild(reply);
+    reply.placeholder = "Enter reply...";
+    reply_area.appendChild(reply);
 
     let button = document.createElement("button");  // for the reply button
     button.innerHTML = "Reply";
     button.setAttribute('id', reviews_obj[i].id);
     button.setAttribute('type','click');
-    //button.onclick = getClickedID(this.id);
-    reply.placeholder = "Enter reply...";
-    reviews.appendChild(button);
+    button.setAttribute('class','btn');
+    button.style.display = 'block';
+    reply_area.appendChild(button);
+    container.appendChild(reply_area)
+    reviews.appendChild(container)
 }
 
 function clicking(e)
@@ -72,10 +91,8 @@ function clicking(e)
     });
     let txt = "reply" + reviews_obj[rev].id;
     let reply_text = document.getElementById(txt);
-    //reply_text.innerHTML=rev_id;
     if (reply_text.value.length != 0)
     {
-        //reply_text.placeholder = "haaaaaaaaaa";
         let reply_obj ={
             product:reviews_obj[rev].product,
             user:reviews_obj[rev].user,
