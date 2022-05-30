@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Review</title>
+</head>
+<body>
+<div>
+    <h1 id="user_name">user name here</h1>
+    <h2>Product Review</h2>
+    <h2 id="product_name">product name here</h2>
+</div>
+<form id="user_product_view_form">
+    <div>
+        <div>
+            <label for="radio">Product Rate:</label>
+        </div>
+        <input type="radio" name="radio" id="radio">
+        <input type="radio" name="radio">
+        <input type="radio" name="radio">
+        <input type="radio" name="radio">
+        <input type="radio" name="radio">
+    </div>
+    <label id="rate1">1</label>
+    <label id="rate2">2</label>
+    <label id="rate3">3</label>
+    <label id="rate4">4</label>
+    <label id="rate5">5</label>
+    <div>
+        <label for="user_review">Enter Review:</label>
+    </div>
+    <div>
+        <textarea name="review_paragraph" placeholder="Enter review:" id="user_review"></textarea>
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+<!--
+    <div>
+        <label>Others reviews:</label>
+    </div>
+    <div>
+        <label>Review given:</label>
+        <p>test</p>
+        <label for="prev_id">Rating given:</label>
+        <input type="radio" name="radio" disabled id="prev_id">
+        <input type="radio" name="radio" disabled checked>
+        <input type="radio" name="radio" disabled>
+        <input type="radio" name="radio" disabled>
+        <input type="radio" name="radio" disabled>
+    </div>
+    -->
+</form>
+
+
+<script src="Product View User.js"></script>
+</body>
+</html>
+
+
+<!--for (let j = 1; j <= 5; j++){                               // for the rating
+        let rating = document.createElement("input");
+        rating.setAttribute('type','radio');
+        if (reviews_obj[i].rate >= j)
+        {
+            rating.checked = true;
+        }
+        else {
+            rating.checked = false;
+            rating.disabled = true;
+        }
+
+        reviews.appendChild(rating);
+    }
