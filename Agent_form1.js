@@ -15,7 +15,7 @@ products.forEach((item) => {
     var para = new URLSearchParams();
     para.append("Product", item);
     para.append("user_name", user_name);
-    a.setAttribute('href',"http://localhost:63342/Test/Agent_form2.html?" + para.toString());
+    a.setAttribute('href',"http://localhost:63342/NLP%20Project/Agent_form2.html?" + para.toString());
 
     //li.innerText = item;
     li.appendChild(a);
