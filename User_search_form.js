@@ -16,7 +16,7 @@ function myFunction()
     }
 }
 
-let prod_list=['Chair', 'Table', 'Computer', 'Laptop', 'Fan', 'Minecraft', 'League of Legends']
+let prod_list=['Chair', 'Table', 'Computer', 'Laptop', 'Fan', 'Minecraft', 'League of Legends', 'game','window','cable','tire','clock']
 
 const user_search_form = document.querySelector('#form-2');
 const my_list = document.getElementById('myUL')
@@ -24,9 +24,8 @@ const my_list = document.getElementById('myUL')
 let queryString = new URLSearchParams(window.location.search);
 var user_name = queryString.get("user_name");
 
-
-const user_name_page_header = document.getElementById('user_name');
-user_name_page_header.textContent = user_name;
+let text1 = "Welcome User " + user_name
+document.getElementById("welcome").innerHTML=(text1);
 
 prod_list.forEach((item) =>{
     let a = document.createElement('a');
@@ -35,7 +34,7 @@ prod_list.forEach((item) =>{
     var para = new URLSearchParams();
     para.append("Product", item)
     para.append("user_name", user_name)
-    a.setAttribute('href', "http://localhost:63342/Test/Product%20View%20User.html?" + para.toString())
+    a.setAttribute('href', "http://localhost:63342/NLP%20Project/Product%20View%20User.html?" + para.toString())
     li.appendChild(a);
     my_list.appendChild(li);
 })
