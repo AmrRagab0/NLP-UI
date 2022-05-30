@@ -3,38 +3,31 @@
 <head>
     <link rel="stylesheet" type="text/css" href="Authentication.css">
     <title>Authentication Page</title>
+    <script src="Agent_form2.js"></script>
 </head>
 <body>
 <div class="main-container">
-    <div class="header-1">
-        <h1>Sign in</h1>
-    </div>
 
     <form id="my-form">
-        <div class="form-1">
-            <div>
-                <label for="username">User Name:</label>
-                <input type="text" class="text-box" id="username">
-            </div>
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" class="text-box" id="password">
-            </div>
-            <div>
-                <input type="submit" class="button" value="Log in">
-            </div>
+        <span class="text-center">login</span>
+        <div class="input-container">
+            <input type="text" required="" id="username"/>
+            <label>User Name</label>
+        </div>
+        <div class="input-container">
+            <input type="password" required="" id="password"/>
+            <label>Password</label>
+        </div>
+        <div>
+            <input type="submit" class="btn">Log in</input>
         </div>
 
     </form>
-
-
-
 
 </div>
 <script src="Authentication.js"></script>
 </body>
 </html>
-
 
 
 
