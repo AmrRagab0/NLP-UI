@@ -12,7 +12,12 @@ function onSubmit(e)
     {
         var para = new URLSearchParams();
         para.append("user_name", Username_input.value)
-        window.open("http://localhost:63342/Test/User_search_form.html?" + para.toString(), "_self")
+        window.open("http://localhost:63342/NLP%20Project/User_search_form.html?" + para.toString(), "_self")
+    } else if(Username_input.value === 'agent' && Password_input.value === 'agent')
+    {
+        var para = new URLSearchParams();
+        para.append("user_name", Username_input.value)
+        window.open("http://localhost:63342/NLP%20Project/Agent_form1.html?" + para.toString(), "_self")
     } else if(Username_input.value === '' && Password_input.value === '')
     {
         console.log(Username_input.value);
