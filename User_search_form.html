@@ -1,19 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="User_search_form.css">
+    <meta charset="UTF-8">
     <title>User Product Search</title>
+    <link rel="stylesheet" type="text/css" href="User_search_form.css">
 </head>
 <body>
-<h1 id="user_name"></h1>
+
+<p id="welcome"></p>
+
 <h2>Product Search</h2>
 <form class="form-2">
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for products..">
-
-    <ul id="myUL">
+    <div class="search">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for products..">
+    </div>
+    <div class="scroll">
+        <ul id="myUL">
         <!--List is initialized dynamically (currently by a list in JavaScript/planned to be by list from backend team) -->
 
-    </ul>
+        </ul>
+    </div>
 </form>
 <script src="User_search_form.js"></script>
 
