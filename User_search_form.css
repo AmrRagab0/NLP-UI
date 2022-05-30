@@ -1,39 +1,110 @@
-* {
-    box-sizing: border-box;
-    background-color: rgb(240,240,240);
+p {
+    font-size: 35px;
+    text-align: center;
+    font-weight: bold;
+}
+
+body {
+    background: dodgerblue linear-gradient(22deg, aqua, dodgerblue, deeppink) fixed;
+    color: white;
+    font: normal 20px/1 system-ui, sans-serif;
+    text-shadow: 0 1px 1px hsl(0 0% 0% / 20%);
+    margin: 3rem;
+}
+
+h2 {
+    text-align: center;
+}
+
+.search{
+    align-items: center;
+    box-sizing: inherit;
+    text-align: center;
 }
 
 #myInput {
     background-position: 10px 12px;
     background-repeat: no-repeat;
-    width: 100%;
+    width: 50%;
     font-size: 16px;
     padding: 12px 20px 12px 40px;
     border: 1px solid #ddd;
     margin-bottom: 12px;
+    text-align: -moz-center;
+
 }
 
-#myUL {
-    list-style-type: none;
+.scroll{
+    width:500px;
+    margin:0 auto;
+    overflow: auto;
+    padding-left: 50px;
+    height: 400px;
+    size: inherit;
+    padding-top: 0;
+}
+
+
+.scroll ul{
+    counter-reset: li;
+    list-style: none;
+    *list-style: decimal;
+    font-size: 17px;
+    font-family: 'Raleway', sans-serif;
     padding: 0;
-    margin: 0;
+    margin-bottom: 4em;
+}
+.scroll ul ul{
+    margin: 0 0 0 2em;
+
 }
 
-#myUL li a {
-    border: 1px solid #ddd;
-    margin-top: -1px; /* Prevent double borders */
-    background-color: #f6f6f6;
-    padding: 12px;
+.scroll a{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    *padding: .4em;
+    margin: .5em 0;
+    background: #FC756F;
+    color: #444;
     text-decoration: none;
-    font-size: 18px;
-    color: black;
-    display: block
+    transition: all .2s ease-in-out;
 }
 
-#myUL li a:hover:not(.header) {
-    background-color: #eee;
+.scroll a:hover{
+    background: lightblue;
+    //background: #d6d4d4;
+    text-decoration:none;
+    transform: scale(1.1);
 }
 
-#myInput:focus {
-    background: lightcoral;
+.scroll a:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background:#FC756F;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    color:#FFF;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
