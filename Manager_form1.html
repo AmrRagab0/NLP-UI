@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager Product Search</title>
+
+    <link rel="stylesheet" type="text/css" href="Manager_form1.css">
+
+</head>
+<body>
+
+<p id="welcome"></p>
+
+
+<div class="card">
+    <div class="card-head">
+        <div class="card-head-title">
+            Important Statistics
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="card-stats">
+            <div class="card-stats-row">
+                <div class="card-stats-amount" id="ticket_num">
+                </div>
+                <div class="card-stats-caption">
+                    Total tickets
+                </div>
+                <div class="card-stats-change">
+                    <div class="card-stats-change-percentage change-positive">100%</div>
+                    <div class="card-stats-change-timeframe">All time</div>
+                </div>
+            </div>
+            <div class="card-stats-row">
+                <div class="card-stats-amount" id="ticket_replied">
+
+                </div>
+                <div class="card-stats-caption">
+                    Tickets Replied
+                </div>
+                <div class="card-stats-change">
+                    <div id="percent_replied"></div>
+                    <div class="card-stats-change-timeframe">All time</div>
+                </div>
+            </div>
+            <div class="card-stats-row">
+                <div class="prod_name" id="lowest_rate">
+
+                </div>
+                <div class="card-stats-caption">
+                    Lowest Rating Product
+                </div>
+            </div>
+            <div class="card-stats-row">
+                <div class="prod_name" id="highest_rate">
+
+                </div>
+                <div class="card-stats-caption">
+                    Highest Rating Product
+                </div>
+            </div>
+            <div class="card-stats-row">
+                <div class="card-stats-amount" id="precision">
+                </div>
+                <div class="card-stats-caption">
+                    Precision
+                </div>
+            </div>
+            <div class="card-stats-row">
+                <div class="card-stats-amount" id="recall">
+                </div>
+                <div class="card-stats-caption">
+                    Recall
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<h2>List Of Products:</h2>
+<div class="search">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Product name...">
+</div>
+<div class="scroll">
+
+    <ul id="products_list">
+
+    </ul>
+</div>
+
+<script src="Manager_form1.js"></script>
+
+</body>
+</html>
