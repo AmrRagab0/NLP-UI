@@ -18,8 +18,10 @@ function onSubmit(e)
         var para = new URLSearchParams();
         para.append("user_name", Username_input.value)
         window.open("http://localhost:63342/NLP%20Project/Agent_form1.html?" + para.toString(), "_self")
-    } else if(Username_input.value === '' && Password_input.value === '')
+    } else if(Username_input.value === 'manager' && Password_input.value === 'manager')
     {
-        console.log(Username_input.value);
+        var para = new URLSearchParams();
+        para.append("user_name", Username_input.value)
+        window.open("http://localhost:63342/Agent_form1.js/Manager_form1.html?" + para.toString(), "_self")
     }
 }
